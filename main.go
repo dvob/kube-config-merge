@@ -33,10 +33,10 @@ func run() error {
 	pflag.StringVar(&prefix, "prefix", prefix, "Prefix names in target config with prefix.")
 	pflag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage: %s [SOURCE]:\n\n", os.Args[0])
-		fmt.Fprintln(os.Stderr, `Merges Kubernetes configuration from SOURCE into the current configuration. It uses
-the default kubectl config locations or you can explicitly specify a target
-config using --kubeconfig flag. If no SOURCE is specified it is read from
-standard input.
+		fmt.Fprintln(os.Stderr, `Merges Kubernetes configuration from file SOURCE into the current
+configuration. It uses the default kubectl config locations or you can
+explicitly specify a target config using --kubeconfig flag. If no SOURCE is
+specified it is read from standard input.
 
 Examples:
 kube-config-merge some-kubeconfig.yaml
